@@ -1,4 +1,4 @@
-const save = (key, value) => {
+const saveToStorage = (key, value) => {
     try {
         const serializedState = JSON.stringify(value);
         localStorage.setItem(key, serializedState);
@@ -7,7 +7,7 @@ const save = (key, value) => {
     }
 };
 
-const load = (key) => {
+const loadToStorage = (key) => {
     try {        
         const serializedState = localStorage.getItem(key);
         return serializedState === null ? undefined : JSON.parse(serializedState);
@@ -16,7 +16,7 @@ const load = (key) => {
     }
 };
 
-const remove = (key) => {
+const removeFromStorage = (key) => {
     try {
         localStorage.removeItem(key);
     } catch (error) {
@@ -25,7 +25,7 @@ const remove = (key) => {
 };
 
 export {
-    save,
-    load,
-    remove,
+    saveToStorage,
+    loadToStorage,
+    removeFromStorage,
 };

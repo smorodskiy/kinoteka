@@ -1,5 +1,6 @@
 .logo {
   display: flex;
+  // ТРЕБА ПОФІКСИТИ ВЕРТИАЛЬНЕ ВИРІВНЮВАННЯ
   // align-items: baseline;
   align-items: center;
   @include fonts(30px, 35px, 500, inherit);

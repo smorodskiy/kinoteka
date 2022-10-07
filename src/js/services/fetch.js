@@ -1,13 +1,7 @@
 import axios from "axios";
-import { save, load } from "./storage";
 
 const URL = "https://api.themoviedb.org/3/";
 const API_KEY = "d5db08081a23b85f2c18e58b0bb5a9b8";
-
-// Set default param
-const param = new URLSearchParams({
-        api_key: API_KEY,
-});
 
 // API Key (v3 auth)
 // d5db08081a23b85f2c18e58b0bb5a9b8
@@ -32,25 +26,36 @@ export const fetchMovie = async ({ keyword, page }) => {
         // Get base URL
         let url = URL;
 
+        // Set default param
+        const param = new URLSearchParams({
+                api_key: API_KEY,
+        });
+
         // Search for keywords, else post for popular movies
-        if (keyword !== undefined) {
-                param.append("query", keyword);
+        if (keyword) {
+                param.set("query", keyword);
                 url = `${url}search/movie`;
         } else {
                 url = `${url}movie/popular`;
         }
 
         // Page param
-        if (page !== undefined) {
-                param.append("page", page);
+        if (page) {
+                param.set("page", page);
         }
 
+        console.log(`${url}?${param.toString()}`);
         return axios.get(`${url}?${param.toString()}`);
 };
 
 export const fetchGenres = async () => {
         // Get base URL
         let url = URL;
+
+        // Set default param
+        const param = new URLSearchParams({
+                api_key: API_KEY,
+        });
 
         url = `${url}genre/movie/list`;
 
