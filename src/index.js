@@ -1,13 +1,11 @@
 // Services
 import "./js/services/fetch";
 
+// Pagination
+import "./js/pagination";
+
+// Init
 import "./js/init";
 
+// Movies gallery
 import "./js/movies"
-
-// import "./js/services/storage";
-
-// Components of style
-
-// import "./js/style/scrollbar";
-// import "./js/style/up-button";
