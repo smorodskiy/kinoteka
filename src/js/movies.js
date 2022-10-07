@@ -11,21 +11,16 @@ function clearGallery() {
         gallery.innerHTML = "";
 }
 
-function getGenresByID({genres : genresList}, ids) {
-        
+function getGenresByID({ genres: genresList }, ids) {
         // console.log(genresList);
-        
-        const res = genresList.filter((genre) => {
-                
-if (ids.includes(genre['id'])) {
-        return Object.values(genre);n
-}
-
-              
+        const res = [];
+        genresList.forEach((genre) => {
+                if (ids.includes(genre["id"])) {
+                        res.push(genre["name"]);
+                }
         });
 
-        console.log(res);
-        return;
+        return res;
 }
 
 // Rendering founded pictures to grid
@@ -35,8 +30,6 @@ function renderMoviesList(dataJSON) {
         const { results: moviesList } = dataJSON;
 
         const genreList = load("genres");
-
-        console.log(genreList);
 
         // Remap json to HTML elements
         const moviesCards = moviesList
