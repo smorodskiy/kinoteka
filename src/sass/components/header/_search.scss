@@ -12,21 +12,21 @@
     margin-top: 16px;
     display: flex;
     align-items: center;
-    color: $warning-message-color;
+    color: #ff001b;
     justify-content: center;
   }
 
   &__input {
     width: 100%;
     border: none;
-    border-bottom: 0.5px solid $search-bottom-border-color;
+    border-bottom: 0.5px solid #fff;
     padding: 3px 16px 3px 1px;
     outline: none;
     background-color: transparent;
     color: inherit;
 
     &::placeholder {
-      color: $search-placeholder-color;
+      color: #fff;
     }
   }
 
@@ -34,7 +34,6 @@
     position: absolute;
     top: 5px;
     right: 0;
-    cursor: pointer;
   }
 
   // TABLET

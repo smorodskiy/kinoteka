@@ -37,8 +37,6 @@ export const fetchMovie = async ({ keyword, page }) => {
                 url = `${url}search/movie`;
         } else {
                 url = `${url}movie/popular`;
-                // For this link a lot of movies doesn't detail info
-                // url = `${url}trending/all/week`;
         }
 
         // Page param
@@ -46,11 +44,10 @@ export const fetchMovie = async ({ keyword, page }) => {
                 param.set("page", page);
         }
 
-        // console.log(`${url}?${param.toString()}`);
+        console.log(`${url}?${param.toString()}`);
         return axios.get(`${url}?${param.toString()}`);
 };
 
-// Get all genres list
 export const fetchGenres = async () => {
         // Get base URL
         let url = URL;
@@ -63,19 +60,4 @@ export const fetchGenres = async () => {
         url = `${url}genre/movie/list`;
 
         return axios.get(`${url}?${param.toString()}`);
-};
-
-// Get movie info by id
-export const fetchMovieDetailsById = async (id) => {
-        let url = URL;
-
-        const param = new URLSearchParams({
-                api_key: API_KEY,
-                append_to_response: 'videos', //,images
-        });
-
-        const urlId = `movie/${id}`;
-        
-        // console.log(`${url}${urlId}?${param.toString()}`);
-        return axios.get(`${url}${urlId}?${param.toString()}`);
 };
