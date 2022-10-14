@@ -1,0 +1,107 @@
+.theme-toggle__wrapper {
+    margin-left: 20px;
+    margin-right: auto;
+}
+
+.theme-toggle__btn {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border-radius: 12px;
+    border: none;
+    width: 50px;
+    height: 24px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.theme-toggle__icon-sun {
+    display: none;
+}
+
+.theme-toggle__icon-moon {
+    display: block;
+}
+
+body.dark-theme {
+    // Головний колір body
+    background-color: $dark-bg-color;
+
+    // Стилізація кнопки
+    & .theme-toggle__icon-sun {
+        display: block;
+    }
+
+    & .theme-toggle__icon-moon {
+        display: none;
+    }
+
+    // Головна сторінка
+    & .movies-section {
+        border-top: 1px solid $dark-border-top-color;
+    }
+
+    & .movies-section__image {
+        box-shadow: $dark-movies-image-shadow;
+    }
+
+    & .movies-section__title {
+        color: $dark-movies-title-color;
+    }
+
+    & .next-card__title {
+        color: $dark-next-card-title-color;
+    }
+
+    & .pagination li {
+        background-color: $dark-pagination-color;
+    }
+
+    & .footer {
+        background-color: $dark-footer-bg-color;
+    }
+
+    & .footer__text,
+    & .footer__link {
+        color: $dark-footer-color;
+
+    }
+
+    // Модальне вікно футера
+    & .footer-modal__title {
+        color: $dark-footer-modal-title-color;
+    }
+
+    & .footer-modal__bg {
+        background-color: $dark-footer-modal-bg-color;
+    }
+
+    // Модальне вікно картки
+    & .modal-detail {
+        background-color: $dark-modal-detail-bg-color;
+    }
+
+    & .modal-detail__title {
+        color: $dark-modal-detail-title-color;
+    }
+
+    & .modal-detail__col1,
+    & .modal-detail__col2 {
+        color: $dark-modal-detail-col-color;
+    }
+
+    & .modal-detail__about-label {
+        color: $dark-modal-detail-about-label-color;
+    }
+
+    & .modal-detail__article {
+        color: $dark-modal-detail-article-color;
+    }
+
+    & .movies-section__message {
+        color: $dark-movies-message-color;
+    }
+}
